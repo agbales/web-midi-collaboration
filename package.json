@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.15.3",
+    "jquery": "^3.2.1",
     "socket.io": "^2.0.3",
     "web-midi-api": "^1.4.4"
   }
