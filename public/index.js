@@ -1,7 +1,9 @@
 var socket;
 socket = io.connect('http://localhost:3000');
+socket.on('midi', gotExternalMidiMessage);
 
-// Midi stuff
+
+// Midi handling
 var midi, data;
 // start talking to MIDI controller
 if (navigator.requestMIDIAccess) {
@@ -25,9 +27,11 @@ function onMIDISuccess(midiData) {
 }
 
 var dataList = document.querySelector('#midi-data ul');
-function gotMIDImessage(messageData) {
 
-  // send via socket
+function gotMIDImessage(messageData) {
+  console.log('got user midi message');
+
+  // emit message to server for other connections to use
   var d = messageData.data;
   var data = {
     on: d[0],
@@ -36,7 +40,15 @@ function gotMIDImessage(messageData) {
   }
   socket.emit('midi', data);
 
-  // render info in window
+  // render data in window
+  var newItem = document.createElement('li');
+  newItem.appendChild(document.createTextNode(messageData.data));
+  dataList.appendChild(newItem);
+}
+
+function gotExternalMidiMessage(messageData) {
+  console.log('got external midi message');
+  // render data in window
   var newItem = document.createElement('li');
   newItem.appendChild(document.createTextNode(messageData.data));
   dataList.appendChild(newItem);
