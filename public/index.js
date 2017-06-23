@@ -44,14 +44,17 @@ function gotMIDImessage(messageData) {
   // render data in window
   var newItem = document.createElement('li');
   newItem.appendChild(document.createTextNode(messageData.data));
+  newItem.className = "user-midi";
   dataList.appendChild(newItem);
 }
 
-function gotExternalMidiMessage(messageData) {
+function gotExternalMidiMessage(data) {
   console.log('got external midi message');
+  console.log('external data: ' + data);
   // render data in window
   var newItem = document.createElement('li');
-  newItem.appendChild(document.createTextNode(messageData.data));
+  newItem.appendChild(document.createTextNode(data.on + ',' + data.pitch + ',' + data.velocity));
+  newItem.className = "external-midi";
   dataList.appendChild(newItem);
 }
 
