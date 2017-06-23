@@ -26,6 +26,17 @@ function onMIDISuccess(midiData) {
 
 var dataList = document.querySelector('#midi-data ul');
 function gotMIDImessage(messageData) {
+
+  // send via socket
+  var d = messageData.data;
+  var data = {
+    on: d[0],
+    pitch: d[1],
+    velocity: d[2]
+  }
+  socket.emit('midi', data);
+
+  // render info in window
   var newItem = document.createElement('li');
   newItem.appendChild(document.createTextNode(messageData.data));
   dataList.appendChild(newItem);
