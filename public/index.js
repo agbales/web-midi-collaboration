@@ -3,6 +3,9 @@ var socket = io();
 // var socket = io.connect('http://localhost:8080');
 socket.on('externalMidi', gotExternalMidiMessage);
 
+// for midi oscillator playback
+var context = new AudioContext();
+var oscillators = {};
 
 // Midi handling
 var midi, data;
@@ -17,6 +20,7 @@ if (navigator.requestMIDIAccess) {
 
 // on success
 function onMIDISuccess(midiData) {
+  console.log(midiData);
   // this is all our MIDI data
   midi = midiData;
   var allInputs = midi.inputs.values();
@@ -46,6 +50,37 @@ function gotMIDImessage(messageData) {
   newItem.appendChild(document.createTextNode(messageData.data));
   newItem.className = "user-midi";
   dataList.appendChild(newItem);
+
+  playNote(data);
+}
+
+// midi note player
+function playNote(data){
+  var frequency = function(note) {
+      return Math.pow(2, ((note - 69) / 12)) * 440;
+  }
+  switch(data.on) {
+    case 144:
+      noteOn(frequency(data.pitch), data.velocity);
+      console.log('note on');
+      break;
+    case 128:
+      noteOff(frequency(data.pitch), data.velocity);
+      console.log('note off');
+      break;
+  }
+
+  function noteOn(frequency, velocity) {
+    oscillators[frequency] = context.createOscillator();
+    oscillators[frequency].frequency.value = frequency;
+    oscillators[frequency].connect(context.destination);
+    oscillators[frequency].start(context.currentTime);
+  }
+
+  function noteOff(frequency, velocity) {
+      oscillators[frequency].stop(context.currentTime);
+      oscillators[frequency].disconnect();
+  }
 }
 
 function gotExternalMidiMessage(data) {
