@@ -91,6 +91,8 @@ function gotExternalMidiMessage(data) {
   newItem.appendChild(document.createTextNode(data.on + ',' + data.pitch + ',' + data.velocity));
   newItem.className = "external-midi";
   dataList.appendChild(newItem);
+
+  playNote(data);
 }
 
 // on failure
