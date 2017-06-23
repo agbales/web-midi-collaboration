@@ -1,7 +1,7 @@
 var socket = io();
 // var above replacing commented out below
 // var socket = io.connect('http://localhost:8080');
-socket.on('midi', gotExternalMidiMessage);
+socket.on('externalMidi', gotExternalMidiMessage);
 
 
 // Midi handling
