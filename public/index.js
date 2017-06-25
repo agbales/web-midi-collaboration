@@ -49,7 +49,19 @@ function gotMIDImessage(messageData) {
   var newItem = document.createElement('li');
   newItem.appendChild(document.createTextNode(messageData.data));
   newItem.className = "user-midi";
-  dataList.appendChild(newItem);
+  dataList.prepend(newItem);
+
+  playNote(data);
+}
+
+function gotExternalMidiMessage(data) {
+  console.log('got external midi message');
+  console.log('external data: ' + data);
+  // render data in window
+  var newItem = document.createElement('li');
+  newItem.appendChild(document.createTextNode(data.on + ',' + data.pitch + ',' + data.velocity));
+  newItem.className = "external-midi";
+  dataList.prepend(newItem);
 
   playNote(data);
 }
@@ -81,18 +93,6 @@ function playNote(data){
       oscillators[frequency].stop(context.currentTime);
       oscillators[frequency].disconnect();
   }
-}
-
-function gotExternalMidiMessage(data) {
-  console.log('got external midi message');
-  console.log('external data: ' + data);
-  // render data in window
-  var newItem = document.createElement('li');
-  newItem.appendChild(document.createTextNode(data.on + ',' + data.pitch + ',' + data.velocity));
-  newItem.className = "external-midi";
-  dataList.appendChild(newItem);
-
-  playNote(data);
 }
 
 // on failure
