@@ -51,11 +51,9 @@ function gotMIDImessage(messageData) {
   }
   socket.emit('midi', data);
 
-  f = Math.round(frequency(d[1]));
-
   // render data in window
   var newItem = document.createElement('li');
-  newItem.appendChild(document.createTextNode(messageData.data + ' frequency: ' + f));
+  newItem.appendChild(document.createTextNode(messageData.data + ' frequency: ' + frequency(d[1]).toFixed(1)));
   newItem.className = "user-midi";
   dataList.prepend(newItem);
 
