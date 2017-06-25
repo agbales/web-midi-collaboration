@@ -7,6 +7,12 @@ socket.on('externalMidi', gotExternalMidiMessage);
 var context = new AudioContext();
 var oscillators = {};
 
+
+// conversion
+function frequency(note) {
+    return Math.pow(2, ((note - 69) / 12)) * 440;
+}
+
 // Midi handling
 var midi, data;
 // start talking to MIDI controller
@@ -45,9 +51,11 @@ function gotMIDImessage(messageData) {
   }
   socket.emit('midi', data);
 
+  f = Math.round(frequency(d[1]));
+
   // render data in window
   var newItem = document.createElement('li');
-  newItem.appendChild(document.createTextNode(messageData.data));
+  newItem.appendChild(document.createTextNode(messageData.data + ' frequency: ' + f));
   newItem.className = "user-midi";
   dataList.prepend(newItem);
 
@@ -68,9 +76,6 @@ function gotExternalMidiMessage(data) {
 
 // midi note player
 function playNote(data){
-  var frequency = function(note) {
-      return Math.pow(2, ((note - 69) / 12)) * 440;
-  }
   switch(data.on) {
     case 144:
       noteOn(frequency(data.pitch), data.velocity);
