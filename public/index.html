@@ -4,11 +4,66 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
 </head>
-<div>
-  <h2>MIDI-Collaboration</h2>
-  <section id="midi-data">
-    <ul></ul>
-  </section>
-</div>
+<body>
+  <div class="container">
+    <h2>MIDI-Collaboration</h2>
+    <ul id="midi-data">
+    </ul>
+    <div class="piano">
+      <div class="piano-key piano-key-natural piano-key-octave-0 piano-key-A piano-key-A0" id="piano_key_A0" data-note="A0"></div>
+      <div class="piano-key piano-key-accidental piano-key-octave-0 piano-key-A# piano-key-Bb piano-key-A#0 piano-key-Bb0" id="piano_key_A#0" data-note="A#0"></div>
+      <div class="piano-key piano-key-natural piano-key-octave-0 piano-key-B piano-key-Cb piano-key-B0 piano-key-Cb0" id="piano_key_B0" data-note="B0"></div>
+      <div class="piano-key piano-key-natural piano-key-octave-1 piano-key-C piano-key-B# piano-key-C1 piano-key-B#1" id="piano_key_C1" data-note="C1"></div>
+      <div class="piano-key piano-key-accidental piano-key-octave-1 piano-key-C# piano-key-Db piano-key-C#1 piano-key-Db1" id="piano_key_C#1" data-note="C#1"></div>
+      <div class="piano-key piano-key-natural piano-key-octave-1 piano-key-D piano-key-D1" id="piano_key_D1" data-note="D1"></div>
+      <div class="piano-key piano-key-accidental piano-key-octave-1 piano-key-D# piano-key-Eb piano-key-D#1 piano-key-Eb1" id="piano_key_D#1" data-note="D#1"></div>
+      <div class="piano-key piano-key-natural piano-key-octave-1 piano-key-E piano-key-Fb piano-key-E1 piano-key-Fb1" id="piano_key_E1" data-note="E1"></div>
+      <div class="piano-key piano-key-natural piano-key-octave-1 piano-key-F piano-key-Eb piano-key-F1 piano-key-Eb1" id="piano_key_F1" data-note="F1"></div>
+      <div class="piano-key piano-key-accidental piano-key-octave-1 piano-key-F# piano-key-Gb piano-key-F#1 piano-key-Gb1" id="piano_key_F#1" data-note="F#1"></div>
+      <div class="piano-key piano-key-natural piano-key-octave-1 piano-key-G piano-key-G1" id="piano_key_G1" data-note="G1"></div>
+      <div class="piano-key piano-key-accidental piano-key-octave-1 piano-key-G# piano-key-Ab piano-key-G#1 piano-key-Ab1" id="piano_key_G#1" data-note="G#1"></div>
+      <div class="piano-key piano-key-natural piano-key-octave-1 piano-key-A piano-key-A1" id="piano_key_A1" data-note="A1"></div>
+      <div class="piano-key piano-key-accidental piano-key-octave-1 piano-key-A# piano-key-Bb piano-key-A#1 piano-key-Bb1" id="piano_key_A#1" data-note="A#1"></div>
+      <div class="piano-key piano-key-natural piano-key-octave-1 piano-key-B piano-key-Cb piano-key-B1 piano-key-Cb1" id="piano_key_B1" data-note="B1"></div>
+      <div class="piano-key piano-key-natural piano-key-octave-2 piano-key-C piano-key-B# piano-key-C2 piano-key-B#2" id="piano_key_C2" data-note="C2"></div>
+      <div class="piano-key piano-key-accidental piano-key-octave-2 piano-key-C# piano-key-Db piano-key-C#2 piano-key-Db2" id="piano_key_C#2" data-note="C#2"></div>
+      <div class="piano-key piano-key-natural piano-key-octave-2 piano-key-D piano-key-D2" id="piano_key_D2" data-note="D2"></div>
+      <div class="piano-key piano-key-accidental piano-key-octave-2 piano-key-D# piano-key-Eb piano-key-D#2 piano-key-Eb2" id="piano_key_D#2" data-note="D#2"></div>
+      <div class="piano-key piano-key-natural piano-key-octave-2 piano-key-E piano-key-Fb piano-key-E2 piano-key-Fb2" id="piano_key_E2" data-note="E2"></div>
+      <div class="piano-key piano-key-natural piano-key-octave-2 piano-key-F piano-key-Eb piano-key-F2 piano-key-Eb2" id="piano_key_F2" data-note="F2"></div>
+      <div class="piano-key piano-key-accidental piano-key-octave-2 piano-key-F# piano-key-Gb piano-key-F#2 piano-key-Gb2" id="piano_key_F#2" data-note="F#2"></div>
+      <div class="piano-key piano-key-natural piano-key-octave-2 piano-key-G piano-key-G2" id="piano_key_G2" data-note="G2"></div>
+      <div class="piano-key piano-key-accidental piano-key-octave-2 piano-key-G# piano-key-Ab piano-key-G#2 piano-key-Ab2" id="piano_key_G#2" data-note="G#2"></div>
+      <div class="piano-key piano-key-natural piano-key-octave-2 piano-key-A piano-key-A2" id="piano_key_A2" data-note="A2"></div>
+      <div class="piano-key piano-key-accidental piano-key-octave-2 piano-key-A# piano-key-Bb piano-key-A#2 piano-key-Bb2" id="piano_key_A#2" data-note="A#2"></div>
+      <div class="piano-key piano-key-natural piano-key-octave-2 piano-key-B piano-key-Cb piano-key-B2 piano-key-Cb2" id="piano_key_B2" data-note="B2"></div>
+      <div class="piano-key piano-key-natural piano-key-octave-3 piano-key-C piano-key-B# piano-key-C3 piano-key-B#3" id="piano_key_C3" data-note="C3"></div>
+      <div class="piano-key piano-key-accidental piano-key-octave-3 piano-key-C# piano-key-Db piano-key-C#3 piano-key-Db3" id="piano_key_C#3" data-note="C#3"></div>
+      <div class="piano-key piano-key-natural piano-key-octave-3 piano-key-D piano-key-D3" id="piano_key_D3" data-note="D3"></div>
+      <div class="piano-key piano-key-accidental piano-key-octave-3 piano-key-D# piano-key-Eb piano-key-D#3 piano-key-Eb3" id="piano_key_D#3" data-note="D#3"></div>
+      <div class="piano-key piano-key-natural piano-key-octave-3 piano-key-E piano-key-Fb piano-key-E3 piano-key-Fb3" id="piano_key_E3" data-note="E3"></div>
+      <div class="piano-key piano-key-natural piano-key-octave-3 piano-key-F piano-key-Eb piano-key-F3 piano-key-Eb3" id="piano_key_F3" data-note="F3"></div>
+      <div class="piano-key piano-key-accidental piano-key-octave-3 piano-key-F# piano-key-Gb piano-key-F#3 piano-key-Gb3" id="piano_key_F#3" data-note="F#3"></div>
+      <div class="piano-key piano-key-natural piano-key-octave-3 piano-key-G piano-key-G3" id="piano_key_G3" data-note="G3"></div>
+      <div class="piano-key piano-key-accidental piano-key-octave-3 piano-key-G# piano-key-Ab piano-key-G#3 piano-key-Ab3" id="piano_key_G#3" data-note="G#3"></div>
+      <div class="piano-key piano-key-natural piano-key-octave-3 piano-key-A piano-key-A3" id="piano_key_A3" data-note="A3"></div>
+      <div class="piano-key piano-key-accidental piano-key-octave-3 piano-key-A# piano-key-Bb piano-key-A#3 piano-key-Bb3" id="piano_key_A#3" data-note="A#3"></div>
+      <div class="piano-key piano-key-natural piano-key-octave-3 piano-key-B piano-key-Cb piano-key-B3 piano-key-Cb3" id="piano_key_B3" data-note="B3"></div>
+      <div class="piano-key piano-key-natural piano-key-octave-4 piano-key-C piano-key-B# piano-key-C4 piano-key-B#4" id="piano_key_C4" data-note="C4"></div>
+      <div class="piano-key piano-key-accidental piano-key-octave-4 piano-key-C# piano-key-Db piano-key-C#4 piano-key-Db4" id="piano_key_C#4" data-note="C#4"></div>
+      <div class="piano-key piano-key-natural piano-key-octave-4 piano-key-D piano-key-D4" id="piano_key_D4" data-note="D4"></div>
+      <div class="piano-key piano-key-accidental piano-key-octave-4 piano-key-D# piano-key-Eb piano-key-D#4 piano-key-Eb4" id="piano_key_D#4" data-note="D#4"></div>
+      <div class="piano-key piano-key-natural piano-key-octave-4 piano-key-E piano-key-Fb piano-key-E4 piano-key-Fb4" id="piano_key_E4" data-note="E4"></div>
+      <div class="piano-key piano-key-natural piano-key-octave-4 piano-key-F piano-key-Eb piano-key-F4 piano-key-Eb4" id="piano_key_F4" data-note="F4"></div>
+      <div class="piano-key piano-key-accidental piano-key-octave-4 piano-key-F# piano-key-Gb piano-key-F#4 piano-key-Gb4" id="piano_key_F#4" data-note="F#4"></div>
+      <div class="piano-key piano-key-natural piano-key-octave-4 piano-key-G piano-key-G4" id="piano_key_G4" data-note="G4"></div>
+      <div class="piano-key piano-key-accidental piano-key-octave-4 piano-key-G# piano-key-Ab piano-key-G#4 piano-key-Ab4" id="piano_key_G#4" data-note="G#4"></div>
+      <div class="piano-key piano-key-natural piano-key-octave-4 piano-key-A piano-key-A4" id="piano_key_A4" data-note="A4"></div>
+      <div class="piano-key piano-key-accidental piano-key-octave-4 piano-key-A# piano-key-Bb piano-key-A#4 piano-key-Bb4" id="piano_key_A#4" data-note="A#4"></div>
+      <div class="piano-key piano-key-natural piano-key-octave-4 piano-key-B piano-key-Cb piano-key-B4 piano-key-Cb4" id="piano_key_B4" data-note="B4"></div>
+      <div class="piano-key piano-key-natural piano-key-octave-8 piano-key-C piano-key-C8" id="piano_key_C8" data-note="C8"></div>
+    </div>
+  </div>
+</body>
 
 <script src="index.js" type="text/javascript"></script>

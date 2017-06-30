@@ -1,7 +1,131 @@
 .user-midi {
-  color: green;
+  color: #00B16A;
 }
 
 .external-midi {
-  color: blue;
+  color: #59ABE3;
+}
+
+#midi-data {
+  list-style: none;
+  height: 300px;
+  overflow: hidden;
+  padding-top: 20px;
+  -webkit-box-shadow: inset 4px 4px 19px 11px rgba(24,24,24,0.08);
+  -moz-box-shadow: inset 4px 4px 19px 11px rgba(24,24,24,0.08);
+  box-shadow: inset 4px 4px 19px 11px rgba(24,24,24,0.08);
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.piano {
+  padding-left: 1px;
+  margin-bottom: 180px;
+}
+
+.piano-key {
+  float: left;
+  border-radius: 0 0 4px 4px;
+}
+
+.piano-key-natural {
+  background: #f5f5f5 -webkit-linear-gradient(top, transparent, #fff, transparent);
+  background: #f5f5f5 linear-gradient(to bottom, transparent, #fff, transparent);
+  border: 1px solid;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.15);
+  border-right-width: 0;
+  border-bottom-width: 2px;
+  height: 120px;
+  width: 30px;
+  margin-left: -1px;
+}
+.piano-key-natural:last-child {
+  border-right-width: 1px;
+}
+.piano-key-natural.piano-key-pressed, .piano-key-natural:active {
+  background: #00B16A -webkit-linear-gradient(top, #f1f1f1, transparent, #f1f1f1);
+  background: #00B16A linear-gradient(to bottom, #f1f1f1, transparent, #f1f1f1);
+  border-bottom-width: 1px;
+  border-left-color: rgb(233,212,96,0.15);
+  box-shadow: inset -2px 0 0 0 rgba(0, 0, 0, 0.15), inset 1px 0 0 0 rgba(0, 0, 0, 0.15);
+}
+
+/* adding external midi input class, blue */
+.piano-key-natural.piano-key-pressed-external, .piano-key-natural:active {
+  background: #59ABE3 -webkit-linear-gradient(top, #f1f1f1, transparent, #f1f1f1);
+  background: #59ABE3 linear-gradient(to bottom, #f1f1f1, transparent, #f1f1f1);
+  border-bottom-width: 1px;
+  border-left-color: rgb(89,171,227,0.15);
+  box-shadow: inset -2px 0 0 0 rgba(0, 0, 0, 0.15), inset 1px 0 0 0 rgba(0, 0, 0, 0.15);
+}
+
+.piano-key-accidental {
+  background: #111 -webkit-linear-gradient(top, transparent, rgba(255, 255, 255, 0.075), transparent);
+  background: #111 linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.075), transparent);
+  box-shadow: inset 0 0 0 1px #000, inset 0 -4px 0 1px #000, inset 0 -5px 0 1px rgba(255, 255, 255, 0.2);
+  height: 66px;
+  width: 20px;
+  position: relative;
+  left: -10px;
+  margin-right: -20px;
+}
+
+.piano-key-accidental.piano-key-pressed, .piano-key-accidental:active {
+  background: #00B16A -webkit-linear-gradient(top, transparent, rgba(233,212,96,0.5));
+  background: #00B16A linear-gradient(to bottom, transparent, rgba(233,212,96,0.5));
+  box-shadow: inset 0 0 0 1px #00B16A, inset 0 -2px 0 1px #00B16A, inset 0 -3px 0 1px rgba(233,212,96,0.2);
+}
+
+/* adding class for external accidental key press */
+.piano-key-accidental.piano-key-pressed-external, .piano-key-accidental:active {
+  background: #C5EFF7 -webkit-linear-gradient(top, transparent, rgba(89,171,227,0.5));
+  background: #C5EFF7 linear-gradient(to bottom, transparent, rgba(89,171,227,0.5));
+  box-shadow: inset 0 0 0 1px #C5EFF7, inset 0 -2px 0 1px #C5EFF7, inset 0 -3px 0 1px rgba(89,171,227,0.2);
+}
+
+@media (max-width: 1561px) {
+  .piano-key-octave-0,
+  .piano-key-octave-8 {
+    display: none;
+  }
+}
+@media (max-width: 1471px) {
+  .piano-key-octave-1 {
+    display: none;
+  }
+}
+@media (max-width: 1261px) {
+  .piano-key-octave-7 {
+    display: none;
+  }
+}
+@media (max-width: 1051px) {
+  .piano-key-octave-2 {
+    display: none;
+  }
+}
+@media (max-width: 841px) {
+  .piano-key-octave-6 {
+    display: none;
+  }
+}
+@media (max-width: 631px) {
+  .piano-key-octave-3 {
+    display: none;
+  }
+}
+@media (max-width: 421px) {
+  .piano-key-octave-5 {
+    display: none;
+  }
 }
