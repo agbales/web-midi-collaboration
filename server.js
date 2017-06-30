@@ -16,6 +16,6 @@ function newConnection(socket) {
   socket.on('midi', midiMsg);
   function midiMsg(data) {
     socket.broadcast.emit('externalMidi', data);
-    console.log('Sending this to other users:', data);
+    console.log(socket.id, ' sending data to other users: ', data);
   }
 }
