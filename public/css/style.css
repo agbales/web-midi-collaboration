@@ -62,8 +62,8 @@ body {
 
 /* adding external midi input class, blue */
 .piano-key-natural.piano-key-pressed-external, .piano-key-natural:active {
-  background: #59ABE3 -webkit-linear-gradient(top, #f1f1f1, transparent, #f1f1f1);
-  background: #59ABE3 linear-gradient(to bottom, #f1f1f1, transparent, #f1f1f1);
+  background: #59ABE3 -webkit-linear-gradient(top, #6fbdf2, transparent, #6fbdf2);
+  background: #59ABE3 linear-gradient(to bottom, #6fbdf2, transparent, #6fbdf2);
   border-bottom-width: 1px;
   border-left-color: rgb(89,171,227,0.15);
   box-shadow: inset -2px 0 0 0 rgba(0, 0, 0, 0.15), inset 1px 0 0 0 rgba(0, 0, 0, 0.15);
