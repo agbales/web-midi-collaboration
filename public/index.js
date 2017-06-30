@@ -48,7 +48,7 @@
     // render data in window
     if (messageData.data[0] == 144) {
       var newItem = document.createElement('li');
-      newItem.appendChild(document.createTextNode('Note: ' + messageData.data[1] + ' Velocity: ' + messageData.data[2] + ' frequency: ' + frequency(d[1]).toFixed(1)));
+      newItem.appendChild(document.createTextNode('Note: ' + messageData.data[1] + '   Velocity: ' + messageData.data[2] + '   Frequency: ' + frequency(d[1]).toFixed(1)));
       newItem.className = "user-midi";
       document.getElementById('midi-data').prepend(newItem);
     }
@@ -61,7 +61,7 @@
     console.log('external data: ' + data);
     // render data in window
     var newItem = document.createElement('li');
-    newItem.appendChild(document.createTextNode('Note: ' + messageData.data[1] + ' Velocity: ' + messageData.data[2] + ' frequency: ' + frequency(d[1]).toFixed(1)));
+    newItem.appendChild(document.createTextNode('Note: ' + messageData.data[1] + '   Velocity: ' + messageData.data[2] + '   Frequency: ' + frequency(d[1]).toFixed(1)));
     newItem.className = "external-midi";
     document.getElementById('midi-data').prepend(newItem);
 
