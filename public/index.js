@@ -57,7 +57,7 @@
   }
 
   function gotExternalMidiMessage(data) {
-    console.log('external data received: ' + data);
+    console.log('external data received: ' + data.on, data.pitch, data.velocity);
     // render data in window
     var newItem = document.createElement('li');
     newItem.appendChild(document.createTextNode('Note: ' + data.ptich + '   Velocity: ' + data.velocity + '   Frequency: ' + frequency(data.pitch).toFixed(1)));
