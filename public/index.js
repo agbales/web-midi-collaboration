@@ -67,7 +67,7 @@
 
     playNote(data);
 
-    msg = { }
+    var msg = { }
     msg.data = [];
     msg.data.push(data.on);
     msg.data.push(data.pitch);
