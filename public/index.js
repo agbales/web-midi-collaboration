@@ -66,7 +66,13 @@
     document.getElementById('midi-data').prepend(newItem);
 
     playNote(data);
-    updateView(data);
+
+    msg = { }
+    msg.data = [];
+    msg.data.push(data.on);
+    msg.data.push(data.pitch);
+    msg.data.push(data.velocity);
+    updateView(msg);
   }
 
   // midi note player
