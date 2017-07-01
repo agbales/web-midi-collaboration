@@ -61,7 +61,7 @@
     console.log('external data: ' + data);
     // render data in window
     var newItem = document.createElement('li');
-    newItem.appendChild(document.createTextNode('Note: ' + messageData.data[1] + '   Velocity: ' + messageData.data[2] + '   Frequency: ' + frequency(d[1]).toFixed(1)));
+    newItem.appendChild(document.createTextNode('Note: ' + data.note + '   Velocity: ' + data.velocity + '   Frequency: ' + frequency(data.note).toFixed(1)));
     newItem.className = "external-midi";
     document.getElementById('midi-data').prepend(newItem);
 
@@ -71,6 +71,7 @@
 
   // midi note player
   function playNote(data){
+    console.log('pitch', data.pitch);
     switch(data.on) {
       case 144:
         noteOn(frequency(data.pitch), data.velocity);
