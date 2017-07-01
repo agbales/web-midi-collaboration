@@ -61,7 +61,7 @@
     console.log('external data: ' + data);
     // render data in window
     var newItem = document.createElement('li');
-    newItem.appendChild(document.createTextNode('Note: ' + data.note + '   Velocity: ' + data.velocity + '   Frequency: ' + frequency(data.note).toFixed(1)));
+    newItem.appendChild(document.createTextNode('Note: ' + data.ptich + '   Velocity: ' + data.velocity + '   Frequency: ' + frequency(data.pitch).toFixed(1)));
     newItem.className = "external-midi";
     document.getElementById('midi-data').prepend(newItem);
 
@@ -191,6 +191,7 @@
 
  //extrnal midi will trigger this
  function updateView(msg) {
+     console.log('updateView msg = ', msg);
      var action = isNoteOffMessage(msg) ? 'remove' :
                   (isNoteOnMessage(msg) ? 'add' : null),
          noteDiv;
