@@ -60,6 +60,7 @@ body {
 
 .piano {
   padding-left: 1px;
+  margin-left: 12px;
   margin-bottom: 180px;
   opacity: .7;
   -webkit-transform: perspective(400px) rotateX(20deg);
