@@ -1,5 +1,8 @@
 .user-midi {
-  color: #00B16A;
+  color: #fb8dc4;
+  text-transform: uppercase;
+  font-size: 2rem;
+  /*color: #00B16A;*/
 }
 
 .external-midi {
@@ -7,6 +10,14 @@
 }
 
 #midi-data {
+  -webkit-transform: perspective(400px) rotateX(50deg);
+  -webkit-transform-style: preserve-3d;
+  background-color: #f5f5f5;
+  opacity: .7;
+  width: 70%;
+  text-align: center;
+  margin: 0 auto;
+  /* tilt styles above */
   list-style: none;
   height: 300px;
   overflow: hidden;
@@ -17,6 +28,11 @@
 }
 
 body {
+  background: url(/images/vw-bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -31,6 +47,7 @@ body {
 .piano {
   padding-left: 1px;
   margin-bottom: 180px;
+  opacity: .8;
 }
 
 .piano-key {
@@ -53,8 +70,8 @@ body {
   border-right-width: 1px;
 }
 .piano-key-natural.piano-key-pressed, .piano-key-natural:active {
-  background: #00B16A -webkit-linear-gradient(top, #2ecc71, transparent, #2ecc71);
-  background: #00B16A linear-gradient(to bottom, #2ecc71, transparent, #2ecc71);
+  background: #FF69B4 -webkit-linear-gradient(top, #fb8dc4, transparent, #fb8dc4);
+  background: #FF69B4 linear-gradient(to bottom, #fb8dc4, transparent, #fb8dc4);
   border-bottom-width: 1px;
   border-left-color: rgb(233,212,96,0.15);
   box-shadow: inset -2px 0 0 0 rgba(0, 0, 0, 0.15), inset 1px 0 0 0 rgba(0, 0, 0, 0.15);
@@ -81,9 +98,9 @@ body {
 }
 
 .piano-key-accidental.piano-key-pressed, .piano-key-accidental:active {
-  background: #00B16A -webkit-linear-gradient(top, transparent, rgba(233,212,96,0.5));
-  background: #00B16A linear-gradient(to bottom, transparent, rgba(233,212,96,0.5));
-  box-shadow: inset 0 0 0 1px #00B16A, inset 0 -2px 0 1px #00B16A, inset 0 -3px 0 1px rgba(233,212,96,0.2);
+  background: #FF69B4 -webkit-linear-gradient(top, transparent, rgba(251,141,196,0.5));
+  background: #FF69B4 linear-gradient(to bottom, transparent, rgba(251,141,196,0.5));
+  box-shadow: inset 0 0 0 1px #FF69B4, inset 0 -2px 0 1px #FF69B4, inset 0 -3px 0 1px rgba(251,141,196,0.2);
 }
 
 /* adding class for external accidental key press */
