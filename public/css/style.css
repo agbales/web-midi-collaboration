@@ -2,33 +2,51 @@
   color: #fb8dc4;
   text-transform: uppercase;
   font-size: 2rem;
-  /*color: #00B16A;*/
 }
 
 .external-midi {
   color: #59ABE3;
+  text-transform: uppercase;
+  font-size: 2rem;
 }
 
 #midi-data {
-  -webkit-transform: perspective(400px) rotateX(50deg);
-  -webkit-transform-style: preserve-3d;
-  background-color: #f5f5f5;
-  opacity: .7;
-  width: 70%;
-  text-align: center;
-  margin: 0 auto;
-  /* tilt styles above */
   list-style: none;
   height: 300px;
   overflow: hidden;
   padding-top: 20px;
-  -webkit-box-shadow: inset 4px 4px 19px 11px rgba(24,24,24,0.08);
+  /*-webkit-box-shadow: inset 4px 4px 19px 11px rgba(24,24,24,0.08);
   -moz-box-shadow: inset 4px 4px 19px 11px rgba(24,24,24,0.08);
-  box-shadow: inset 4px 4px 19px 11px rgba(24,24,24,0.08);
+  box-shadow: inset 4px 4px 19px 11px rgba(24,24,24,0.08);*/
+  /* tilt styles  */
+  -webkit-transform: perspective(400px) rotateX(50deg);
+  -webkit-transform-style: preserve-3d;
+  /*background-color: #f5f5f5;*/
+  opacity: .6;
+  width: 640px;
+  text-align: center;
+  margin: -12px auto;
+}
+
+#midi-data li {
+  -webkit-transform: perspective(400px) rotateX(-30deg);
+  -webkit-transform-style: preserve-3d;
+  background-color: #FF69B4;
+  color: #f5f5f5;
+}
+
+#midi-data li:after {
+  content: " ";
+  display: block;
+  background: #F2E0FA;
+  height: 29px;
+  width: 100%;
+  position: absolute;
+  bottom: -29px;
 }
 
 body {
-  background: url(/images/vw-bg.jpg) no-repeat center center fixed;
+  background: url(/images/vw-bg.gif) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
