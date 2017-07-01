@@ -74,19 +74,21 @@
     switch(data.on) {
       case 144:
         noteOn(frequency(data.pitch), data.velocity);
-        console.log('note on');
         break;
       case 128:
         noteOff(frequency(data.pitch), data.velocity);
-        console.log('note off');
         break;
     }
 
     function noteOn(frequency, velocity) {
-      oscillators[frequency] = context.createOscillator();
-      oscillators[frequency].frequency.value = frequency;
-      oscillators[frequency].connect(context.destination);
-      oscillators[frequency].start(context.currentTime);
+      var vol = (velocity / 127).toFixed(2);
+
+      var osc = oscillators[frequency] = context.createOscillator();
+          osc.type = 'sawtooth';
+          osc.frequency.value = frequency;
+          osc.setVolume = vol;
+          osc.connect(context.destination);
+          osc.start(context.currentTime);
     }
 
     function noteOff(frequency, velocity) {
