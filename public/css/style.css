@@ -15,13 +15,9 @@
   height: 300px;
   overflow: hidden;
   padding-top: 20px;
-  /*-webkit-box-shadow: inset 4px 4px 19px 11px rgba(24,24,24,0.08);
-  -moz-box-shadow: inset 4px 4px 19px 11px rgba(24,24,24,0.08);
-  box-shadow: inset 4px 4px 19px 11px rgba(24,24,24,0.08);*/
   /* tilt styles  */
   -webkit-transform: perspective(400px) rotateX(50deg);
   -webkit-transform-style: preserve-3d;
-  /*background-color: #f5f5f5;*/
   opacity: .6;
   width: 640px;
   text-align: center;
@@ -65,7 +61,9 @@ body {
 .piano {
   padding-left: 1px;
   margin-bottom: 180px;
-  opacity: .8;
+  opacity: .7;
+  -webkit-transform: perspective(400px) rotateX(20deg);
+  -webkit-transform-style: preserve-3d;
 }
 
 .piano-key {
