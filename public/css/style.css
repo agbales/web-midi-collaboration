@@ -42,7 +42,7 @@
 }
 
 body {
-  background: url(/images/vw-bg.gif) no-repeat center center fixed;
+  background: url(/images/vw-bg.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -62,8 +62,8 @@ body {
   padding-left: 1px;
   margin-left: 12px;
   margin-bottom: 180px;
-  opacity: .7;
-  -webkit-transform: perspective(400px) rotateX(20deg);
+  opacity: .9;
+  -webkit-transform: perspective(500px) rotateX(20deg);
   -webkit-transform-style: preserve-3d;
 }
 
