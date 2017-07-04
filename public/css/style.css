@@ -28,7 +28,7 @@
   -webkit-transform: perspective(400px) rotateX(-30deg);
   -webkit-transform-style: preserve-3d;
   background-color: #FF69B4;
-  color: #f5f5f5;
+  color: #fff;
 }
 
 #midi-data li:after {

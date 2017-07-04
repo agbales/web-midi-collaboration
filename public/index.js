@@ -60,7 +60,7 @@
     console.log('external data received: ' + data.on, data.pitch, data.velocity);
     // render data in window
     var newItem = document.createElement('li');
-    newItem.appendChild(document.createTextNode('Note: ' + data.ptich + '   Velocity: ' + data.velocity + '   Frequency: ' + frequency(data.pitch).toFixed(1)));
+    newItem.appendChild(document.createTextNode('Note: ' + data.pitch + '   Velocity: ' + data.velocity + '   Frequency: ' + frequency(data.pitch).toFixed(1)));
     newItem.className = "external-midi";
     document.getElementById('midi-data').prepend(newItem);
 
@@ -71,7 +71,7 @@
     msg.data.push(data.on);
     msg.data.push(data.pitch);
     msg.data.push(data.velocity);
-    updateView(msg);
+    updateKeyboard(msg);
   }
 
   // midi note player
@@ -195,8 +195,8 @@
  }, false);
 
  //extrnal midi will trigger this
- function updateView(msg) {
-     console.log('updateView msg = ', msg);
+ function updateKeyboard(msg) {
+     console.log('updateKeyboard msg = ', msg);
      var action = isNoteOffMessage(msg) ? 'remove' :
                   (isNoteOnMessage(msg) ? 'add' : null),
          noteDiv;
