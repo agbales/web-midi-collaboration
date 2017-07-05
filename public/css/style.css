@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
 .user-midi {
   color: #fb8dc4;
   text-transform: uppercase;
@@ -18,7 +20,7 @@
   /* tilt styles  */
   -webkit-transform: perspective(400px) rotateX(50deg);
   -webkit-transform-style: preserve-3d;
-  opacity: .6;
+  opacity: .8;
   width: 640px;
   text-align: center;
   margin: -12px auto;
@@ -42,11 +44,12 @@
 }
 
 body {
-  background: url(/images/vw-bg.gif) no-repeat center center fixed;
+  background: url(/images/vw-bg.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  font-family: 'Ubuntu', sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
