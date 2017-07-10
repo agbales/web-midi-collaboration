@@ -66,11 +66,11 @@
 
     playNote(data);
 
-    var msg = { }
-    msg.data = [];
-    msg.data.push(data.on);
-    msg.data.push(data.pitch);
-    msg.data.push(data.velocity);
+    var msg = { };
+        msg.data = [];
+        msg.data.push(data.on);
+        msg.data.push(data.pitch);
+        msg.data.push(data.velocity);
     updateKeyboard(msg);
   }
 
