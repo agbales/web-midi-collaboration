@@ -1,6 +1,8 @@
 # Web MIDI Collaboration
 
-This MIDI application allows real-time collaboration on the web through Node.js, Express.js, and Socket.io. Live demo hosted on [Heroku](https://midi-collaboration.herokuapp.com/).
+This MIDI application allows real-time collaboration on the web with Node, Express, and Socket.io.
+
+Live demo hosted on [Heroku](https://midi-collaboration.herokuapp.com/).
 
 ## Learn More
 
